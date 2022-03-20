@@ -1,5 +1,6 @@
 const { nanoid } = require('nanoid');
 const notes = require('./notes');
+
 const addNoteHandler = (request, h) => {
 	const { title, tags, body } = request.payload;
 	const id = nanoid(16);
@@ -20,7 +21,7 @@ const addNoteHandler = (request, h) => {
 		});
 		response.code(201);
 		return response;
-	}
+	};
 	const response = h.response({
 		status: 'fail',
 		message: 'catatan gagal ditambahkan',
@@ -48,7 +49,7 @@ const getNoteByIdHandler = (request, h) => {
         note,
       },
     };
-  }
+  };
   const response = h.response({
     status: 'fail',
     message: 'Catatan tidak ditemukan',
@@ -80,7 +81,7 @@ const editNoteByIdHandler = (request, h) => {
     });
     response.code(200);
     return response;
-  }
+  };
  
   const response = h.response({
     status: 'fail',
@@ -103,7 +104,7 @@ const deleteNoteByIdHandler = (request, h) => {
     });
     response.code(200);
     return response;
-  }
+  };
  
  const response = h.response({
     status: 'fail',
