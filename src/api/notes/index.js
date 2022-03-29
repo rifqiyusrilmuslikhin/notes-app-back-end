@@ -1,5 +1,4 @@
 const NotesHandler = require('./handler');
-// const validator = require('./')
 const routes = require('./routes');
  
 module.exports = {
